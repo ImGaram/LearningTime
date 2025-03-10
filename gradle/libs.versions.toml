@@ -1,8 +1,10 @@
 [versions]
-agp = "8.7.2"
+agp = "8.7.3"
+androidTools = "31.5.0"
 kotlin = "2.0.0"
 ksp = "2.0.0-1.0.23"
 hilt = "2.51.1"
+jetbrainsKotlinJvm = "2.0.0"
 
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -45,6 +47,13 @@ androidx-room-testing = { group = "androidx.room", name = "room-testing", versio
 # truth
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 
+# Gradle
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -52,4 +61,12 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 android-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 
+# convention plugins
+learningtime-android-application = { id = "learningtime.android.application", version = "unspecified" }
+learningtime-android-library = { id = "learningtime.android.library", version = "unspecified" }
+learningtime-kotlin-jvm = { id = "learningtime.kotlin.jvm", version = "unspecified" }
+learningtime-compose = { id = "learningtime.compose", version = "unspecified" }
+learningtime-hilt = { id = "learningtime.hilt", version = "unspecified" }
+learningtime-room = { id = "learningtime.room", version = "unspecified" }
