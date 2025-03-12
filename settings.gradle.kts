@@ -30,3 +30,4 @@ include(":feature:mypage")
 
 include(":core:data")
 include(":core:domain")
+include(":core:di")
