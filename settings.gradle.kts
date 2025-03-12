@@ -23,3 +23,5 @@ dependencyResolutionManagement {
 rootProject.name = "LearningTime"
 include(":app")
 include(":common")
+
+include(":feature:main")
