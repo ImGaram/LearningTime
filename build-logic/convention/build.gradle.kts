@@ -40,5 +40,9 @@ gradlePlugin {
             id = libs.plugins.learningtime.room.get().pluginId
             implementationClass = "RoomPlugin"
         }
+        register("kotlinJvm") {
+            id = libs.plugins.learningtime.kotlin.jvm.get().pluginId
+            implementationClass = "KotlinJvmPlugin"
+        }
     }
 }

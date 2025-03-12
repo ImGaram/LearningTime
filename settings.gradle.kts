@@ -29,3 +29,4 @@ include(":feature:timer")
 include(":feature:mypage")
 
 include(":core:data")
+include(":core:domain")
