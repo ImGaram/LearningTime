@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.learningtime.android.library)
+    alias(libs.plugins.learningtime.android.feature)
     alias(libs.plugins.kotlin.serialization)
 }
 
