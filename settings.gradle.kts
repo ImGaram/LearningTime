@@ -25,3 +25,4 @@ include(":app")
 include(":common")
 
 include(":feature:main")
+include(":feature:timer")
