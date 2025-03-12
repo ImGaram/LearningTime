@@ -26,3 +26,4 @@ include(":common")
 
 include(":feature:main")
 include(":feature:timer")
+include(":feature:mypage")
