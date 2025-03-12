@@ -20,6 +20,10 @@ gradlePlugin {
             id = libs.plugins.learningtime.android.application.get().pluginId
             implementationClass = "AndroidApplicationPlugin"
         }
+        register("androidFeature") {
+            id = libs.plugins.learningtime.android.feature.get().pluginId
+            implementationClass = "AndroidFeaturePlugin"
+        }
         register("androidLibrary") {
             id = libs.plugins.learningtime.android.library.get().pluginId
             implementationClass = "AndroidLibraryPlugin"
