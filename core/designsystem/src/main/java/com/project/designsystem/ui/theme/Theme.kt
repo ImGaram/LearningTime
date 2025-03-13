@@ -1,4 +1,4 @@
-package com.project.learningtime.ui.theme
+package com.project.designsystem.ui.theme
 
 import android.app.Activity
 import android.os.Build

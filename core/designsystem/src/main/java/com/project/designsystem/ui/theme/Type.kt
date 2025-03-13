@@ -1,4 +1,4 @@
-package com.project.learningtime.ui.theme
+package com.project.designsystem.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
