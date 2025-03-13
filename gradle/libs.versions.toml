@@ -73,6 +73,6 @@ learningtime-android-application = { id = "learningtime.android.application", ve
 learningtime-android-feature = { id = "learningtime.android.feature", version = "unspecified" }
 learningtime-android-library = { id = "learningtime.android.library", version = "unspecified" }
 learningtime-kotlin-jvm = { id = "learningtime.kotlin.jvm", version = "unspecified" }
-learningtime-compose = { id = "learningtime.compose", version = "unspecified" }
+learningtime-compose-application = { id = "learningtime.compose.application", version = "unspecified" }
 learningtime-hilt = { id = "learningtime.hilt", version = "unspecified" }
 learningtime-room = { id = "learningtime.room", version = "unspecified" }

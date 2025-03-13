@@ -8,7 +8,7 @@ internal class AndroidFeaturePlugin: Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "learningtime.android.application")
-            apply(plugin = "learningtime.compose")
+            apply(plugin = "learningtime.compose.application")
             apply(plugin = "learningtime.hilt")
             apply(plugin = "learningtime.room")
 
