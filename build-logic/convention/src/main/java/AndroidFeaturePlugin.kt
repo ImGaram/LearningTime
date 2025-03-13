@@ -7,13 +7,14 @@ import org.gradle.kotlin.dsl.dependencies
 internal class AndroidFeaturePlugin: Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            apply(plugin = "learningtime.android.application")
-            apply(plugin = "learningtime.compose.application")
+            apply(plugin = "learningtime.android.library")
+            apply(plugin = "learningtime.compose.library")
             apply(plugin = "learningtime.hilt")
             apply(plugin = "learningtime.room")
 
             dependencies {
-
+                "implementation"(project(":core:designsystem"))
+                "implementation"(project(":core:domain"))
 
                 // junit
                 "testImplementation"(libs.findLibrary("junit").get())
