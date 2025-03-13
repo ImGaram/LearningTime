@@ -1,6 +1,10 @@
 plugins {
-    alias(libs.plugins.learningtime.kotlin.jvm)
+    alias(libs.plugins.learningtime.android.library)
     alias(libs.plugins.learningtime.hilt)
+}
+
+android {
+    namespace = "com.project.domain"
 }
 
 dependencies {
