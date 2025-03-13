@@ -1,8 +1,10 @@
 [versions]
-agp = "8.7.2"
+agp = "8.7.3"
+androidTools = "31.5.0"
 kotlin = "2.0.0"
 ksp = "2.0.0-1.0.23"
 hilt = "2.51.1"
+jetbrainsKotlinJvm = "2.0.0"
 
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -14,6 +16,8 @@ composeBom = "2024.04.01"
 hiltNavigationCompose = "1.2.0"
 room = "2.6.1"
 truth = "1.4.4"
+appcompat = "1.6.1"
+material = "1.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +34,8 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 # hilt
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
@@ -45,11 +51,29 @@ androidx-room-testing = { group = "androidx.room", name = "room-testing", versio
 # truth
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 
+# Gradle
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 android-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 
+# convention plugins
+learningtime-android-application = { id = "learningtime.android.application", version = "unspecified" }
+learningtime-android-feature = { id = "learningtime.android.feature", version = "unspecified" }
+learningtime-android-library = { id = "learningtime.android.library", version = "unspecified" }
+learningtime-kotlin-jvm = { id = "learningtime.kotlin.jvm", version = "unspecified" }
+learningtime-compose-application = { id = "learningtime.compose.application", version = "unspecified" }
+learningtime-compose-library = { id = "learningtime.compose.library", version = "unspecified" }
+learningtime-hilt = { id = "learningtime.hilt", version = "unspecified" }
+learningtime-room = { id = "learningtime.room", version = "unspecified" }
