@@ -32,6 +32,10 @@ gradlePlugin {
             id = libs.plugins.learningtime.compose.application.get().pluginId
             implementationClass = "ComposeApplicationPlugin"
         }
+        register("composeLibrary") {
+            id = libs.plugins.learningtime.compose.library.get().pluginId
+            implementationClass = "ComposeLibraryPlugin"
+        }
         register("hilt") {
             id = libs.plugins.learningtime.hilt.get().pluginId
             implementationClass = "HiltPlugin"
