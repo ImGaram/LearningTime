@@ -1,58 +1,102 @@
 package com.project.designsystem.ui.theme
 
-import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.staticCompositionLocalOf
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+private val LearningTimeDarkColors = LearningTimeColors(
+    primary = PrimaryDark,
+    secondary = SecondaryDark,
+    neutral10 = Neutral10Dark,
+    neutral20 = Neutral20Dark,
+    neutral30 = Neutral30Dark,
+    neutral40 = Neutral40Dark,
+    neutral50 = Neutral50Dark,
+    neutral60 = Neutral60Dark,
+    neutral70 = Neutral70Dark,
+    neutral80 = Neutral80Dark,
+    neutral90 = Neutral90Dark,
+    neutral100 = Neutral100Dark,
+    subPrimary = SubPrimaryDark,
+    subSecondary = SubSecondaryDark,
+    warning = WarningDark,
+    info = InfoDark,
+    green30 = Green30Dark,
+    green40 = Green40Dark,
+    green50 = Green50Dark,
+    green60 = Green60Dark,
+    green70 = Green70Dark,
+    green80 = Green80Dark,
+    green90 = Green90Dark
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+private val LearningTimeLightColors = LearningTimeColors(
+    primary = PrimaryLight,
+    secondary = SecondaryLight,
+    neutral10 = Neutral10Light,
+    neutral20 = Neutral20Light,
+    neutral30 = Neutral30Light,
+    neutral40 = Neutral40Light,
+    neutral50 = Neutral50Light,
+    neutral60 = Neutral60Light,
+    neutral70 = Neutral70Light,
+    neutral80 = Neutral80Light,
+    neutral90 = Neutral90Light,
+    neutral100 = Neutral100Light,
+    subPrimary = SubPrimaryLight,
+    subSecondary = SubSecondaryLight,
+    warning = WarningLight,
+    info = InfoLight,
+    green30 = Green30Light,
+    green40 = Green40Light,
+    green50 = Green50Light,
+    green60 = Green60Light,
+    green70 = Green70Light,
+    green80 = Green80Light,
+    green90 = Green90Light
 )
+
+@Composable
+private fun ProvideLearningTimeTheme(
+    colors: LearningTimeColors,
+    typography: LearningTimeTypography,
+    shapes: LearningTimeShapes,
+    spaces: LearningTimeSpaces,
+    content: @Composable () -> Unit
+) {
+    val colorPalette = remember { colors }
+    colorPalette.update(colors)
+
+    CompositionLocalProvider(
+        LocalColors provides colorPalette,
+        LocalTypography provides typography,
+        LocalShapes provides shapes,
+        LocalSpaces provides spaces,
+        content = content
+    )
+}
 
 @Composable
 fun LearningTimeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+    val colors = remember {
+        if (darkTheme) LearningTimeDarkColors else LearningTimeLightColors
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
+    ProvideLearningTimeTheme(
+        colors = colors,
+        typography = LearningTimeTheme.typography,
+        shapes = LearningTimeTheme.shapes,
+        spaces = LearningTimeTheme.spaces,
         content = content
     )
 }
+
+val LocalColors = staticCompositionLocalOf { LearningTimeLightColors }
+val LocalTypography = staticCompositionLocalOf { LearningTimeTypography() }
+val LocalShapes = staticCompositionLocalOf { LearningTimeShapes() }
+val LocalSpaces = staticCompositionLocalOf { LearningTimeSpaces() }
