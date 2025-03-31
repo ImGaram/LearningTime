@@ -67,6 +67,7 @@ val Green90Dark = Color(0xFFCDEDD1)
 class LearningTimeColors(
     primary: Color,
     secondary: Color,
+    neutral00: Color,
     neutral10: Color,
     neutral20: Color,
     neutral30: Color,
@@ -92,6 +93,8 @@ class LearningTimeColors(
     var primary by mutableStateOf(primary)
         private set
     var secondary by mutableStateOf(secondary)
+        private set
+    var neutral00 by mutableStateOf(neutral00)
         private set
     var neutral10 by mutableStateOf(neutral10)
         private set
@@ -139,6 +142,7 @@ class LearningTimeColors(
     fun update(other: LearningTimeColors) {
         primary = other.primary
         secondary = other.secondary
+        neutral00 = other.neutral00
         neutral10 = other.neutral10
         neutral20 = other.neutral20
         neutral30 = other.neutral30

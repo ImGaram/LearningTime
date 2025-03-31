@@ -9,6 +9,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 private val LearningTimeDarkColors = LearningTimeColors(
     primary = PrimaryDark,
     secondary = SecondaryDark,
+    neutral00 = Neutral00Dark,
     neutral10 = Neutral10Dark,
     neutral20 = Neutral20Dark,
     neutral30 = Neutral30Dark,
@@ -35,6 +36,7 @@ private val LearningTimeDarkColors = LearningTimeColors(
 private val LearningTimeLightColors = LearningTimeColors(
     primary = PrimaryLight,
     secondary = SecondaryLight,
+    neutral00 = Neutral00Light,
     neutral10 = Neutral10Light,
     neutral20 = Neutral20Light,
     neutral30 = Neutral30Light,
