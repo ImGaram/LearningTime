@@ -3,7 +3,6 @@ package com.project.learningtime
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -16,7 +15,7 @@ import com.project.designsystem.ui.theme.LearningTimeTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContent {
             LearningTimeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -41,7 +40,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    com.project.designsystem.ui.theme.LearningTimeTheme {
+    LearningTimeTheme {
         Greeting("Android")
     }
 }
